@@ -1,22 +1,11 @@
 package com.sahillamba.aoc2022;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.PriorityQueue;
-import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Day1 {
-    public static final String EOL = "\n";
-
-    private final BufferedReader reader;
-
-    public Day1(String inputFile) {
-        this.reader = new BufferedReader(new InputStreamReader(
-                getClass().getResourceAsStream(inputFile)
-        ));
+public class Day1 extends Solution {
+    public Day1(String inputType) {
+        super(1, inputType);
     }
 
     public int part1() {
