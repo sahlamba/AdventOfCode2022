@@ -9,7 +9,7 @@ public class Day2 extends Solution {
         super(2, inputType);
     }
 
-    public int part1() {
+    public String part1() {
         Map<String, Shape> decryptedMoves = Map.of(
                 "A", Shape.Rock,
                 "X", Shape.Rock,
@@ -26,10 +26,10 @@ public class Day2 extends Solution {
             Shape me = decryptedMoves.get(moves[1]);
             total += Shape.play(me, opponent);
         }
-        return total;
+        return String.valueOf(total);
     }
 
-    public int part2() {
+    public String part2() {
         Map<String, Shape> decryptedMoves = Map.of(
                 "A", Shape.Rock,
                 "B", Shape.Paper,
@@ -48,7 +48,7 @@ public class Day2 extends Solution {
             String outcome = outcomes.get(moves[1]);
             total += Shape.playForOutcome(outcome, opponent);
         }
-        return total;
+        return String.valueOf(total);
     }
 
     enum Shape {

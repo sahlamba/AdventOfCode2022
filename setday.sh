@@ -28,12 +28,12 @@ public class Day${1} extends Solution {
         super(${1}, inputType);
     }
 
-    public int part1() {
-        return 0;
+    public String part1() {
+        return \"0\";
     }
     
-    public int part2() {
-        return 0;
+    public String part2() {
+        return \"0\";
     }
 }" >"${SOL_SRC}"
 
@@ -56,12 +56,12 @@ public class Day${1}SampleTest {
 
     @Test
     public void part1() {
-        assertEquals(0, solution.part1());
+        assertEquals(\"0\", solution.part1());
     }
 
     @Test
     public void part2() {
-        assertEquals(0, solution.part2());
+        assertEquals(\"0\", solution.part2());
     }
 }" >"${TST_SAMPLE}"
 

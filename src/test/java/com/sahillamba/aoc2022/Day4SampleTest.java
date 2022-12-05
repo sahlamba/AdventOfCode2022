@@ -15,11 +15,11 @@ public class Day4SampleTest {
 
     @Test
     public void part1() {
-        assertEquals(2, solution.part1());
+        assertEquals("2", solution.part1());
     }
 
     @Test
     public void part2() {
-        assertEquals(4, solution.part2());
+        assertEquals("4", solution.part2());
     }
 }

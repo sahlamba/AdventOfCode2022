@@ -8,7 +8,7 @@ public class Day1 extends Solution {
         super(1, inputType);
     }
 
-    public int part1() {
+    public String part1() {
         int max = Integer.MIN_VALUE;
         int sum = 0;
 
@@ -25,10 +25,10 @@ public class Day1 extends Solution {
             max = Math.max(max, sum);
         }
 
-        return max;
+        return String.valueOf(max);
     }
 
-    public int part2() {
+    public String part2() {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         minHeap.offer(Integer.MIN_VALUE);
 
@@ -59,6 +59,6 @@ public class Day1 extends Solution {
             sum += minHeap.poll();
         }
 
-        return sum;
+        return String.valueOf(sum);
     }
 }

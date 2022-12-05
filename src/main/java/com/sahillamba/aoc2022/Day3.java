@@ -12,14 +12,14 @@ public class Day3 extends Solution {
         super(3, inputType);
     }
 
-    public int part1() {
-        return reader
+    public String part1() {
+        return String.valueOf(reader
                 .lines()
                 .map(this::prioritizeArrangement)
-                .reduce(0, Integer::sum);
+                .reduce(0, Integer::sum));
     }
 
-    public int part2() {
+    public String part2() {
         List<String> lines = reader.lines().collect(Collectors.toList());
 
         List<List<String>> lineGroups = new LinkedList<>();
@@ -31,9 +31,9 @@ public class Day3 extends Solution {
             lineGroups.add(group);
         }
 
-        return lineGroups.stream()
+        return String.valueOf(lineGroups.stream()
                 .map(this::intersectingCharScore)
-                .reduce(0, Integer::sum);
+                .reduce(0, Integer::sum));
     }
 
     private int score(Character c) {

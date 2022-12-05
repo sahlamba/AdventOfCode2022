@@ -15,7 +15,7 @@ public abstract class Solution {
         )));
     }
 
-    public abstract int part1();
+    public abstract String part1();
 
-    public abstract int part2();
+    public abstract String part2();
 }

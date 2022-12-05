@@ -5,20 +5,20 @@ public class Day4 extends Solution {
         super(4, inputType);
     }
 
-    public int part1() {
-        return (int) reader
+    public String part1() {
+        return String.valueOf(reader
                 .lines()
                 .map(Range::of)
                 .filter(p -> p.left.fullyContains(p.right) || p.right.fullyContains(p.left))
-                .count();
+                .count());
     }
     
-    public int part2() {
-        return (int) reader
+    public String part2() {
+        return String.valueOf(reader
                 .lines()
                 .map(Range::of)
                 .filter(p -> p.left.intersects(p.right) || p.right.intersects(p.left))
-                .count();
+                .count());
     }
 
     static class Range {
