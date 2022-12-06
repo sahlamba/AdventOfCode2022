@@ -123,7 +123,7 @@ public class Day5 extends Solution {
 
             Stack<String> pitStop = new Stack<>();
             IntStream.range(0, count).forEach(i -> pitStop.add(source.pop()));
-            while(!pitStop.isEmpty()) {
+            while (!pitStop.isEmpty()) {
                 destination.add(pitStop.pop());
             }
         }
