@@ -10,29 +10,23 @@ public class Day5 extends Solution {
     private static final String STACKS = "stacks";
     private static final String MOVES = "moves";
 
+    private final List<Stack<String>> stacks;
+    private final List<Move> moves;
+
     public Day5(String inputType) {
         super(5, inputType);
+        Map<String, Object> input = parseInput();
+        stacks = getStacks(input);
+        moves = getMoves(input);
     }
 
     public String part1() {
-        Map<String, Object> input = parseInput();
-
-        List<Stack<String>> stacks = getStacks(input);
-        List<Move> moves = getMoves(input);
-
         moves.forEach(m -> m.apply(stacks));
-
         return stacks.stream().map(Stack::peek).collect(Collectors.joining());
     }
 
     public String part2() {
-        Map<String, Object> input = parseInput();
-
-        List<Stack<String>> stacks = getStacks(input);
-        List<Move> moves = getMoves(input);
-
         moves.forEach(m -> m.applyRetainingOrder(stacks));
-
         return stacks.stream().map(Stack::peek).collect(Collectors.joining());
     }
 

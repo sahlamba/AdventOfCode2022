@@ -1,12 +1,16 @@
 package com.sahillamba.aoc2022;
 
+import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Day2 extends Solution {
+    private final List<String> lines;
+
     public Day2(String inputType) {
         super(2, inputType);
+        lines = reader.lines().filter(Predicate.not(String::isBlank)).collect(Collectors.toList());
     }
 
     public String part1() {
@@ -20,7 +24,7 @@ public class Day2 extends Solution {
         );
 
         int total = 0;
-        for (String line : reader.lines().filter(Predicate.not(String::isBlank)).collect(Collectors.toList())) {
+        for (String line : lines) {
             String[] moves = line.split(" ");
             Shape opponent = decryptedMoves.get(moves[0]);
             Shape me = decryptedMoves.get(moves[1]);
@@ -42,7 +46,7 @@ public class Day2 extends Solution {
         );
 
         int total = 0;
-        for (String line : reader.lines().filter(Predicate.not(String::isBlank)).collect(Collectors.toList())) {
+        for (String line : lines) {
             String[] moves = line.split(" ");
             Shape opponent = decryptedMoves.get(moves[0]);
             String outcome = outcomes.get(moves[1]);

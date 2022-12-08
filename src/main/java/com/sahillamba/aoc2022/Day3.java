@@ -8,20 +8,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class Day3 extends Solution {
+    private final List<String> lines;
+
     public Day3(String inputType) {
         super(3, inputType);
+        lines = reader.lines().collect(Collectors.toList());
     }
 
     public String part1() {
-        return String.valueOf(reader
-                .lines()
+        return String.valueOf(lines.stream()
                 .map(this::prioritizeArrangement)
                 .reduce(0, Integer::sum));
     }
 
     public String part2() {
-        List<String> lines = reader.lines().collect(Collectors.toList());
-
         List<List<String>> lineGroups = new LinkedList<>();
         for (int i = 0; i < lines.size() - 2; i += 3) {
             List<String> group = new LinkedList<>();

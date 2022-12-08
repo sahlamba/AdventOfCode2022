@@ -1,18 +1,22 @@
 package com.sahillamba.aoc2022;
 
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.stream.Collectors;
 
 public class Day1 extends Solution {
+    private final List<String> lines;
+
     public Day1(String inputType) {
         super(1, inputType);
+        lines = reader.lines().collect(Collectors.toList());
     }
 
     public String part1() {
         int max = Integer.MIN_VALUE;
         int sum = 0;
 
-        for (String line : reader.lines().collect(Collectors.toList())) {
+        for (String line : lines) {
             if (line.isBlank()) {
                 max = Math.max(max, sum);
                 sum = 0;
@@ -33,7 +37,7 @@ public class Day1 extends Solution {
         minHeap.offer(Integer.MIN_VALUE);
 
         int sum = 0;
-        for (String line : reader.lines().collect(Collectors.toList())) {
+        for (String line : lines) {
             if (line.isBlank()) {
                 if (sum > minHeap.peek()) {
                     minHeap.offer(sum);

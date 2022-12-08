@@ -1,21 +1,25 @@
 package com.sahillamba.aoc2022;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Day4 extends Solution {
+    private final List<String> lines;
+
     public Day4(String inputType) {
         super(4, inputType);
+        lines = reader.lines().collect(Collectors.toList());
     }
 
     public String part1() {
-        return String.valueOf(reader
-                .lines()
+        return String.valueOf(lines.stream()
                 .map(Range::of)
                 .filter(p -> p.left.fullyContains(p.right) || p.right.fullyContains(p.left))
                 .count());
     }
     
     public String part2() {
-        return String.valueOf(reader
-                .lines()
+        return String.valueOf(lines.stream()
                 .map(Range::of)
                 .filter(p -> p.left.intersects(p.right) || p.right.intersects(p.left))
                 .count());

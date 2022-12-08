@@ -15,7 +15,6 @@ public class Day7 extends Solution {
     private static final long TOTAL_DISK_SPACE = 70000000L;
     private static final long MIN_FREE_DISK_SPACE_REQUIRED = 30000000L;
 
-
     private final FSNode root;
 
     public Day7(String inputType, boolean debug) {
